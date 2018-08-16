@@ -3,7 +3,7 @@
 //  QianBoLe
 //
 //  Created by 钟汉耀 on 2018/4/19.
-//  Copyright © 2018年 天下会. All rights reserved.
+//  Copyright © 2018年 Hank. All rights reserved.
 //
 //  注意:加上 IB_DESIGNABLE 动态渲染该类图形化界面，必须在@interface上面，中间不能有其它代码
 //  注意:加上 IBInspectable 就可以可视化显示相关的属性

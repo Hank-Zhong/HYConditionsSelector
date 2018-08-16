@@ -3,7 +3,7 @@
 //  QianBoLe
 //
 //  Created by 钟汉耀 on 2018/4/19.
-//  Copyright © 2018年 天下会. All rights reserved.
+//  Copyright © 2018年 Hank. All rights reserved.
 //
 /**
  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
@@ -342,7 +342,7 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
         textLayerWidth = surplusWidth;
     }
     
-    textLayer.frame = CGRectMake((index * self.itemWidth) + (self.itemWidth - textLayerWidth - otherWidth) * 0.5 + contentInterval, (self.height - self.textFont.lineHeight) * 0.5, textLayerWidth, self.textFont.lineHeight);
+    textLayer.frame = CGRectMake((index * self.itemWidth) + (self.itemWidth - textLayerWidth - otherWidth) * 0.5 + contentInterval, (self.bounds.size.height - self.textFont.lineHeight) * 0.5, textLayerWidth, self.textFont.lineHeight);
     
     if (index < self.indicators.count) {
         HYConditionSelectionSwitchState state = (self.selectIndex - 1 == index) ? HYConditionSelectionSwitchUnfold : HYConditionSelectionSwitchShut;
