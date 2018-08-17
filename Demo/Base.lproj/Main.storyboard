@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,37 +13,20 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l4B-R5-HmS"/>
+                        <viewControllerLayoutGuide type="bottom" id="go0-qy-ecu"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-V4-e4S" customClass="HYConditionSelectionView">
-                                <rect key="frame" x="0.0" y="94" width="375" height="66"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-VG-0Sn" customClass="HYConditionSelectionView">
+                                <rect key="frame" x="0.0" y="190" width="375" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="itemsString" value="选项1,选项2,选项3,选项4"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" red="0.25098039220000001" green="0.87450980389999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectTextColor">
-                                        <color key="value" red="0.88235294119999996" green="0.33333333329999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
-                                        <color key="value" red="0.16078431369999999" green="0.56470588239999997" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectIndicatorColor">
-                                        <color key="value" red="0.88235294119999996" green="0.33333333329999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-VG-0Sn" customClass="HYConditionSelectionView">
-                                <rect key="frame" x="0.0" y="242" width="375" height="39"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Urq-Aw-k30"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="itemsString" value="选项1,选项2,选项3"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -63,33 +45,91 @@
                                         <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="touchesTimeInterval">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="baselineColor">
+                                        <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MG9-74-zCx" customClass="HYConditionSelectionView">
-                                <rect key="frame" x="0.0" y="341" width="375" height="39"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MG9-74-zCx" customClass="HYConditionSelectionView">
+                                <rect key="frame" x="0.0" y="260" width="375" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9qD-md-a9q"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="itemsString" value="选项1,选项2"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="textFontSize">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="baselineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-vp-dE4" customClass="HYConditionSelectionView">
-                                <rect key="frame" x="0.0" y="416" width="375" height="39"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-V4-e4S" customClass="HYConditionSelectionView">
+                                <rect key="frame" x="0.0" y="100" width="375" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="qoY-Zf-BBd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="itemsString" value="选项1,选项2,选项3,选项4"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.25098039220000001" green="0.87450980389999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectTextColor">
+                                        <color key="value" red="0.88235294119999996" green="0.33333333329999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="0.16078431369999999" green="0.56470588239999997" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectIndicatorColor">
+                                        <color key="value" red="0.88235294119999996" green="0.33333333329999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="separatorColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="touchesTimeInterval">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-vp-dE4" customClass="HYConditionSelectionView">
+                                <rect key="frame" x="0.0" y="330" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZXr-dN-6Tj"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="itemsString" value="选项1"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BdO-VG-0Sn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4X7-8M-zky"/>
+                            <constraint firstItem="BdO-VG-0Sn" firstAttribute="top" secondItem="K2K-V4-e4S" secondAttribute="bottom" constant="30" id="4dn-To-tzZ"/>
+                            <constraint firstItem="BdO-VG-0Sn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="CeQ-nA-HbS"/>
+                            <constraint firstItem="K2K-V4-e4S" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="NdM-LP-vsh"/>
+                            <constraint firstItem="CnZ-vp-dE4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="WWk-9B-HSp"/>
+                            <constraint firstItem="MG9-74-zCx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eMp-lv-N6U"/>
+                            <constraint firstItem="MG9-74-zCx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="m5e-zZ-AVY"/>
+                            <constraint firstItem="MG9-74-zCx" firstAttribute="top" secondItem="BdO-VG-0Sn" secondAttribute="bottom" constant="30" id="m9X-2n-2Z5"/>
+                            <constraint firstItem="K2K-V4-e4S" firstAttribute="top" secondItem="l4B-R5-HmS" secondAttribute="bottom" constant="100" id="rYi-Dh-amB"/>
+                            <constraint firstItem="K2K-V4-e4S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wWH-Me-5Tg"/>
+                            <constraint firstItem="CnZ-vp-dE4" firstAttribute="top" secondItem="MG9-74-zCx" secondAttribute="bottom" constant="30" id="wXN-P5-6Wd"/>
+                            <constraint firstItem="CnZ-vp-dE4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yPz-QP-XEz"/>
+                        </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="conditionSelectionView1" destination="K2K-V4-e4S" id="AlZ-vH-S76"/>
+                        <outlet property="conditionSelectionView2" destination="BdO-VG-0Sn" id="DfD-gj-V9V"/>
+                        <outlet property="conditionSelectionView3" destination="MG9-74-zCx" id="Oqy-ps-V8z"/>
+                        <outlet property="conditionSelectionView4" destination="CnZ-vp-dE4" id="rs7-Fp-JB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

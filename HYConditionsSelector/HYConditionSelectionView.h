@@ -4,9 +4,7 @@
 //
 //  Created by 钟汉耀 on 2018/4/19.
 //  Copyright © 2018年 Hank. All rights reserved.
-//
-//  注意:加上 IB_DESIGNABLE 动态渲染该类图形化界面，必须在@interface上面，中间不能有其它代码
-//  注意:加上 IBInspectable 就可以可视化显示相关的属性
+//  github:https://github.com/Hank-Zhong/HYConditionsSelector
 
 
 #import <UIKit/UIKit.h>
@@ -57,6 +55,10 @@ typedef NS_ENUM (NSInteger, HYConditionSelectionSwitchState){
  分割线的颜色。默认lightGrayColor
  */
 @property (null_resettable, nonatomic, strong) IBInspectable UIColor *separatorColor;
+/**
+ 底边线颜色，默认“colorWithWhite:0.8 alpha:1”
+ */
+@property (null_resettable, nonatomic, strong) IBInspectable UIColor *baselineColor;
 /**
  选项文字字体大小，默认12
  */

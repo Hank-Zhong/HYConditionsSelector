@@ -87,7 +87,7 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     
     self.baseline = [CALayer layer];
     self.baseline.frame = CGRectMake(0, self.bounds.size.height - 0.5, self.bounds.size.width, 0.5);
-    self.baseline.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1].CGColor;
+    self.baseline.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1].CGColor;
     [self.layer addSublayer:self.baseline];
 }
 
@@ -226,6 +226,17 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
             separator.backgroundColor = separatorColor.CGColor;
         }
     }
+}
+
+-(void)setBaselineColor:(UIColor *)baselineColor{
+    if (!baselineColor) {
+        baselineColor = [UIColor colorWithWhite:0.8 alpha:1];
+    }
+    if (_baselineColor == baselineColor || [_baselineColor isEqual:baselineColor]) {
+        return;
+    }
+    _baselineColor = baselineColor;
+    self.baseline.backgroundColor = baselineColor.CGColor;
 }
 
 -(void)setTextFont:(UIFont *)textFont{
