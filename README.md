@@ -2,6 +2,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/HYConditionsSelector.svg?style=flat)](https://github.com/banchichen/TZImagePickerController)
 
 一个简易的条件选择器控件
+
 <img src="https://github.com/Hank-Zhong/HYConditionsSelector/blob/master/HYConditionsSelector_%20screenshot1.png" width="40%" height="40%"><img src="https://github.com/Hank-Zhong/HYConditionsSelector/blob/master/HYConditionsSelector_%20screenshot2.png" width="40%" height="40%">
 
 ## 一. Installation 安装
