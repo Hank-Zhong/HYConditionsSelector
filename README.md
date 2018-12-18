@@ -1,5 +1,5 @@
 # HYConditionsSelector
-[![CocoaPods](https://img.shields.io/cocoapods/v/HYConditionsSelector.svg?style=flat)](https://github.com/banchichen/TZImagePickerController)
+[![CocoaPods](https://img.shields.io/cocoapods/v/HYConditionsSelector.svg?style=flat)](https://github.com/Hank-Zhong/HYConditionsSelector)
 
 一个简易的条件选择器控件
 
