@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                    首次pods上传
+                    简易的条件选择器控件
                    DESC
 
   s.homepage     = "https://github.com/Hank-Zhong/HYConditionsSelector"
