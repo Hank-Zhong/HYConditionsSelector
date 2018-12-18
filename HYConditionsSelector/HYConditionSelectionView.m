@@ -18,7 +18,7 @@
  ║        ╲╱                       intervalWidth             intervalWidth █                                           ║
  ║ separatorInterval                                                         } separatorInterval                       ║
  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
- |→                              itemWidth                                ←|
+ |→                              itemWidth                                ←|→               itemWidth                 ←|
  */
 
 #import "HYConditionSelectionView.h"
@@ -91,6 +91,14 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     [self.layer addSublayer:self.baseline];
 }
 
+-(void)layoutSubviews{
+    if (self.itemsString.length > 0) {//xib创建，需要在此重新更新约束
+        self.items = [self.itemsString componentsSeparatedByString:@","];
+        self.itemsString = @"";
+        self.baseline.frame = CGRectMake(0, self.bounds.size.height - 0.5, self.bounds.size.width, 0.5);
+    }
+}
+
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     if (self = [super initWithCoder:aDecoder]) {
         [self initView];
@@ -148,7 +156,6 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
         return;
     }
     _itemsString = itemsString;
-    self.items = [itemsString componentsSeparatedByString:@","];
 }
 
 -(void)setTextColor:(UIColor *)textColor{
@@ -368,6 +375,9 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     NSInteger index = (touchPoint.x - contentInterval) / self.itemWidth;
     if (index >= self.items.count) {
         index = self.items.count - 1;
+        if (index < 0) {
+            return;
+        }
     }
     
     if (self.selectIndex - 1 == index) {
