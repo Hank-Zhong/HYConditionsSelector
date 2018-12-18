@@ -1,5 +1,5 @@
 # HYConditionsSelector
-[![CocoaPods](https://img.shields.io/cocoapods/v/HYConditionsSelector.svg?style=flat)](https://github.com/Hank-Zhong/HYConditionsSelector)
+![](https://img.shields.io/badge/platform-iOS-blue.svg) ![](https://img.shields.io/badge/language-Objective--C-brightgreen.svg) [![CocoaPods](https://img.shields.io/cocoapods/v/HYConditionsSelector.svg?style=flat)](https://github.com/Hank-Zhong/HYConditionsSelector)
 
 一个简易的条件选择器控件
 
