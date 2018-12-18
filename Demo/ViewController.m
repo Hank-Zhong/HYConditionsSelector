@@ -35,6 +35,7 @@
     self.conditionSelectionView.textColor = [UIColor colorWithWhite:0.2 alpha:1];
     self.conditionSelectionView.selectTextColor = [UIColor colorWithRed:0.25f green:0.87f blue:0.85f alpha:1];
     self.conditionSelectionView.selectIndicatorColor = [UIColor colorWithRed:0.25f green:0.87f blue:0.85f alpha:1];
+    self.conditionSelectionView.unclickableItems = [NSSet setWithObjects:@"0", @"2", nil];
     
     [self.view addSubview:self.conditionSelectionView];
 }

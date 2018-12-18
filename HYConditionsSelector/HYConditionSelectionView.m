@@ -158,6 +158,16 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     _itemsString = itemsString;
 }
 
+-(void)setUnclickableItems:(NSSet<NSString *> *)unclickableItems{
+    if ([_unclickableItems isSubsetOfSet:unclickableItems]) return;
+    _unclickableItems = unclickableItems;
+    for (NSInteger i = 0; i < self.indicators.count; i++) {
+        CAShapeLayer *indicator = self.indicators[i];
+        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", i];
+        indicator.hidden = [_unclickableItems containsObject:unclickableStr];
+    }
+}
+
 -(void)setTextColor:(UIColor *)textColor{
     if (!textColor) {
         textColor = [UIColor blackColor];
@@ -324,6 +334,10 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     indicator.path = bezierPath.CGPath;
     [self.layer addSublayer:indicator];
     [self.indicators addObject:indicator];
+    if (self.unclickableItems.count > 0) {
+        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", index];
+        indicator.hidden = [_unclickableItems containsObject:unclickableStr];
+    }
     
     //create a separator
     if (index != 0) {
@@ -369,7 +383,6 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    self.userInteractionEnabled = NO;
     UITouch *touch= [[touches allObjects] firstObject];
     CGPoint touchPoint = [touch locationInView:self];
     NSInteger index = (touchPoint.x - contentInterval) / self.itemWidth;
@@ -379,7 +392,14 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
             return;
         }
     }
+    if (self.unclickableItems.count > 0) {
+        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", index];
+        if ([_unclickableItems containsObject:unclickableStr]){
+            return;
+        }
+    }
     
+    self.userInteractionEnabled = NO;
     if (self.selectIndex - 1 == index) {
         //点击了上次选中的，取消选中
         self.selectIndex = 0;

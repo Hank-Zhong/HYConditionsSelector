@@ -36,6 +36,11 @@ typedef NS_ENUM (NSInteger, HYConditionSelectionSwitchState){
 @property (nonnull, nonatomic, strong) IBInspectable NSString *itemsString;
 
 /**
+ 不可点击的选项集合，可为空
+ */
+@property (nullable, nonatomic, strong) NSSet <NSString *>*unclickableItems;
+
+/**
  选项文字的颜色，默认blackColor
  */
 @property (null_resettable, nonatomic, strong) IBInspectable UIColor *textColor;

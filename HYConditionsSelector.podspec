@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HYConditionsSelector"
-  s.version      = "0.0.1"
+  s.version      = "0.0.3"
   s.summary      = "一个简易的条件选择器控件，HYConditionsSelector."
 
   # This description is used to generate tags and improve search results.
