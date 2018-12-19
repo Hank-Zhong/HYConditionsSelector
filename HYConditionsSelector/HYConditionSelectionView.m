@@ -163,7 +163,7 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     _unclickableItems = unclickableItems;
     for (NSInteger i = 0; i < self.indicators.count; i++) {
         CAShapeLayer *indicator = self.indicators[i];
-        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", i];
+        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", (long)i];
         indicator.hidden = [_unclickableItems containsObject:unclickableStr];
     }
 }
@@ -335,7 +335,7 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     [self.layer addSublayer:indicator];
     [self.indicators addObject:indicator];
     if (self.unclickableItems.count > 0) {
-        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", index];
+        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", (long)index];
         indicator.hidden = [_unclickableItems containsObject:unclickableStr];
     }
     
@@ -355,8 +355,16 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
         return;
     }
     CATextLayer *textLayer = self.textLayers[index];
+    //如果没有设置其他样式的情况下，使用下边的代码能让我计算的宽度准确一点
+    //有办法计算宽度准确的，请一定要联系我告诉我。。
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.lineSpacing = 1;
+    //字体颜色
+    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName:self.textColor,NSParagraphStyleAttributeName:paragraph}];
+    //字体大小
+    [attributedStr addAttribute:NSFontAttributeName value:self.textFont range:NSMakeRange(0, text.length)];
     if (text) {
-        textLayer.string = text;
+        textLayer.string = attributedStr;
     }
     //set layer font
     CFStringRef fontName = (__bridge CFStringRef)_textFont.fontName;
@@ -368,8 +376,10 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
     //计算剩余可显示文字的宽度
     CGFloat otherWidth = indicatorWidth + separatorWidth + intervalWidth * 2;//一项中除了文字外的宽度
     CGFloat surplusWidth = self.itemWidth - otherWidth;//一项中文字可用的宽度
-    //计算文字长度
-    CGFloat textLayerWidth = [textLayer.string sizeWithAttributes:@{NSFontAttributeName:self.textFont}].width;
+    
+    //计算字体宽度
+    CGFloat textLayerWidth = [attributedStr boundingRectWithSize:CGSizeMake(MAXFLOAT, self.textFont.lineHeight) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size.width;
+    
     if (textLayerWidth > surplusWidth) {
         textLayerWidth = surplusWidth;
     }
@@ -393,7 +403,7 @@ static const CGFloat intervalWidth     = 5;   //文本与指示图标的间隔
         }
     }
     if (self.unclickableItems.count > 0) {
-        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", index];
+        NSString *unclickableStr = [NSString stringWithFormat:@"%ld", (long)index];
         if ([_unclickableItems containsObject:unclickableStr]){
             return;
         }

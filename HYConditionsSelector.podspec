@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                    简易的条件选择器控件
+                    条件选择器控件，HYConditionsSelector。能够快速集成与项目中，体积小。支持直接在Xib里使用。
                    DESC
 
   s.homepage     = "https://github.com/Hank-Zhong/HYConditionsSelector"
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Hank-Zhong/HYConditionsSelector.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/Hank-Zhong/HYConditionsSelector.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
