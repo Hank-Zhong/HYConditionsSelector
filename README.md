@@ -1,5 +1,5 @@
 # HYConditionsSelector
-![](https://img.shields.io/badge/platform-iOS%208.0+-blue.svg) ![](https://img.shields.io/badge/language-Objective--C-brightgreen.svg) [![CocoaPods](https://img.shields.io/cocoapods/v/HYConditionsSelector.svg?style=flat)](https://github.com/Hank-Zhong/HYConditionsSelector) [![License](https://img.shields.io/cocoapods/l/TTGDeallocTaskHelper.svg?style=flat)](https://github.com/Hank-Zhong/HYConditionsSelector/blob/master/LICENSE)
+![](https://img.shields.io/badge/platform-iOS%208.0+-blue.svg) ![](https://img.shields.io/badge/language-Objective--C-brightgreen.svg) [![CocoaPods](https://img.shields.io/cocoapods/v/HYConditionsSelector.svg?style=flat)](https://github.com/Hank-Zhong/HYConditionsSelector) [![License](https://img.shields.io/cocoapods/l/HYConditionsSelector.svg?style=flat)](https://github.com/Hank-Zhong/HYConditionsSelector/blob/master/LICENSE)
 
 一个简易的条件选择器控件
 
